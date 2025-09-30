@@ -2,18 +2,20 @@ import SectionHeader from "../comps/SectionHeader";
 import ContactForm from '../../components/comps/ContactForm';
 import clsx from "clsx";
 import { FaFacebook, FaTiktok, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import HoneyBookWidget from '../comps/HoneyBookWidget';
 
 const Contact = () => {
     return (
         <section id="Contact">
-            <SectionHeader title="Contact" />
+            <SectionHeader title="Contact Us To Get Started" />
 
-            <div className="px-24 pb-12 flex flex-col md:flex-row mx-auto">
-                <div className="w-full md:w-1/2">
-                    <ContactForm />
+            <div className="max-w-7xl mx-auto">
+                <div className="w-full">
+                    {/* <ContactForm /> */}
+                    <HoneyBookWidget />
                 </div>
 
-                <div className="mx-auto">
+                {/* <div className="mx-auto">
                     <div className="max-w-sm">
                         <h4 className="font-bold text-2xl pb-4">Head Office</h4>
                         <p>123 Your Business St</p>
@@ -31,7 +33,7 @@ const Contact = () => {
                         <FaXTwitter className="w-5 h-5" />
                         <FaTiktok className="w-5 h-5" />
                     </div>
-                </div>
+                </div> */}
             </div>
         </section>
     );

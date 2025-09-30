@@ -1,43 +1,45 @@
 import Image from 'next/image';
 import SectionHeader from '../comps/SectionHeader'
-import {Card, CardHeader, CardBody, CardFooter} from "@heroui/card";
+import {Card, CardBody, CardFooter} from "@heroui/card";
+import WorksiteImage from '@/public/worksite.jpg'
+import HouseImage from '@/public/house.png'
+import ConstructionWomanImage from '@/public/construction_woman.jpg'
 
 const Services = () => {
     const ServiceData = [
         {
-            image: 'worksite.jpg',
+            image: WorksiteImage,
             alt: 'Worksite image',
-            title: 'Preconstruction Planning',
-            description: 'Use this area to describe this service. Why is it useful? Your clients will want to know what makes it a value-add for their project.'
+            title: 'Site Planning & Strategy',
+            description: 'We will help you map out your website with clarity and purpose. From your layout to service descriptions, every element will be designed to convert visitors to clients.'
         },
         {
-            image: 'house.png',
+            image: HouseImage,
             alt: 'House Image',
-            title: 'Architectural Modelling',
-            description: 'Use this area to describe this service. Why is it useful? Your clients will want to know what makes it a value-add for their project.'
+            title: 'Visual Identity & Branding',
+            description: 'Your brand deserves more than a logo. We craft cohesive  colors, typography, and imagery that reflects your professionalism and builds trust with your audience.'
         },
         {
-            image: 'construction_woman.jpg',
+            image: ConstructionWomanImage,
             alt: 'Construction woman',
-            title: 'Construction Management',
-            description: 'Use this area to describe this service. Why is it useful? Your clients will want to know what makes it a value-add for their project.'
+            title: 'Mobile-Optimized Design',
+            description: 'Whether your clients are on-site or mobile, your website will look sharp and load fast across all devices. Built with modern tech and responsive layouts.'
         }
     ]
 
     const ServiceCard = ({ image, alt, title, description }) => {
         return (
-            <Card className=" max-w-96" radius='none'>
-                <CardBody className='w-96 h-72'>
+            <Card className="" radius='none'>
+                <CardBody className=''>
                     <Image
-                        src={`/${image}`}
+                        src={image}
                         alt={alt}
-                        fill
-                        className='object-cover'
+                        className='object-cover h-56'
                     />
                 </CardBody>
 
-                <CardFooter className="py-6 px-8 flex-col items-start">
-                    <h3 className='font-bold text-xl'>
+                <CardFooter className="py-6 px-8 flex-col">
+                    <h3 className='font-bold text-xl text-center'>
                         {title}
                     </h3>
 
@@ -49,10 +51,10 @@ const Services = () => {
         )
     }
     return (
-        <section id="Services" className='px-6 md:px-24 py-12'>
-            <SectionHeader title='Services' />
+        <section id="Services" className='max-w-7xl py-12 mx-auto px-8 lg:px-0'>
+            <SectionHeader title='What We Offer' />
 
-            <div className='flex flex-col lg:flex-row justify-between gap-4 '>
+            <div className='flex flex-col md:flex-row justify-between gap-4 '>
                 {ServiceData.map((data) => (
                     <ServiceCard 
                         {...data} 

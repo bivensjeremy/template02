@@ -1,47 +1,25 @@
 import Image from "next/image";
 import SectionHeader from "../comps/SectionHeader";
+import SampleBusiness from "@/public/sample_business_logo-removebg-preview.png";
 
 const Clients = () => {
-    const NumbersData = [
-        {
-            title: 'logo01.jpg',
-            desc: 'Est.'
-        },
-        {
-            title: '200',
-            desc: 'Projects Completed'
-        },
-        {
-            title: '900',
-            desc: 'Contractors Appointed'
-        },
-        {
-            title: '10',
-            desc: 'Awards Won'
-        }
-    ]
-
     const BusinessLogos = [ 'logo01.jpg', 'logo02.jpg', 'logo03.jpg', 'logo04.jpg']
 
     return (
-        <section id="Clients" className="px-24 py-12 ">
-            <SectionHeader title="Clients" />
+        <section id="Clients" className="max-w-7xl mx-auto py-12 ">
+            <SectionHeader title="Your Trusted Clients" />
 
-            <div className="flex flex-row justify-between items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 justify-center items-center mx-auto">
                 {BusinessLogos.map(logo => (
-                    <div key={logo} className="w-72 ">
+                    <div key={logo} className="mx-auto">
                         <Image
-                            src={`/${logo}`}
-                            alt='Business Logo'
-                            width={200}
-                            height={200}
-                            className="w-full h-full"
+                            src={SampleBusiness}
+                            alt='Sample Business Logo'
+                            className=""
                         />
                     </div>
                 ))}
             </div>
-
-
         </section>
     );
 }

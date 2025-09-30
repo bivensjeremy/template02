@@ -17,7 +17,7 @@ export default async function Page({ params }) {
   const { title, desc, image, id } = projectData.find((p) => p.id === projects);
 
   return (
-    <main>
+    <main className="min-h-screen">
       <div className="h-72 bg-secondary flex flex-col justify-center">
         <SectionHeader title={title} />
       </div>
